@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-require("./routes/apiroute")(app);
-require("./routes/htmlroutes")(app);
+require("./app/routing/apiroute")(app);
+require("./app/routing/htmlroutes")(app);
 
 
 
