@@ -145,7 +145,7 @@
         var newProfile = {
             name: $("#name").val(),
             photo: $("#photo").val(),
-            Answers: [
+            answers: [
                 $("#q1").val(),
                 $("#q2").val(),
                 $("#q3").val(),
@@ -162,19 +162,28 @@
         };
 
         console.log(newProfile);
+        $.get("/api/friends", function (data) {
+            for (i = 0; i < data.length; i++) {
+                for (a = 0; a < data[i].answers.length; a++) {
+                    var compare = [];
+                    compare.push(Math.abs(data[i].answers[a] - newProfile.answers[a]));
+                    console.log(compare)
+                    //cant figure out how to ->
+                    //seperate the array 10 at a time
+                    //once i figure that out ->
+                    //add the arrays inside themselves
+                    //pick the array with the smallest number
+                    //corrolate it to its matching friend
+                    //alert thats the friend you matched
+                    alert("Check psuedocode in survey.html")
+
+                }
+            }
+        });
+
 
         $.post("/api/friends", newProfile,
             function (data) {
-
-
-                if (data) {
-                    console.log(data)
-
-                } else {
-                    alert("error");
-                }
-
-
 
             });
 
