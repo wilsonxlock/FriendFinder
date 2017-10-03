@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -17,12 +18,12 @@
         <div>
             <form>
                 Name:<br>
-                <input type="text" name="name">
+                <input type="text" id="name">
 
             </form>
             <form>
                 Link to a Photo:<br>
-                <input type="text" name="photo">
+                <input type="text" id="photo">
 
             </form>
         </div>
@@ -131,7 +132,7 @@
                 </select>
         </div>
         <br>
-        <button type="button" id "submit">Submit</button>
+        <button type="button" id="submit">Submit</button>
     </div>
 </body>
 
@@ -142,8 +143,8 @@
 
 
         var newProfile = {
-            name: $("#name").val().trim(),
-            photo: $("#photo").val().trim(),
+            name: $("#name").val(),
+            photo: $("#photo").val(),
             Answers: [
                 $("#q1").val(),
                 $("#q2").val(),
